@@ -39,3 +39,10 @@
 
 ::github{repo="zxyang3636/CodeVoy"}
 
+---
+
+参考：
+:::info
+https://blog.canmoe.com/posts/fuwari-twikoo-guide/
+https://mc.mimeng.top/posts/frontend/fuwari-mermaid-integration-guide/
+:::
