@@ -1,0 +1,410 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Code-Vision",
+    "home_page_url": "https://zzyang.top/",
+    "feed_url": "https://zzyang.top/feed.json",
+    "description": "知识管理与技术分享",
+    "icon": "https://zzyang.top/logo.png",
+    "author": {
+        "name": "张小阳",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "https://zzyang.top/posts/langChain4j",
+            "content_html": "<p>:::warning<br>\nLangChain4j JDK不能低于17<br>\n:::</p>\n<h2>大模型部署</h2>\n<p>智能应用就是在传统软件的基础上接入大模型，所以，我们要完成智能应用的开发，首</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/langChain4j\" target=\"_blank\">https://zzyang.top/posts/langChain4j</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/langChain4j",
+            "title": "LangChain4j",
+            "date_modified": "2026-03-04T07:20:55.219Z",
+            "date_published": "2026-03-04T07:20:55.219Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/redis-actualCombat",
+            "content_html": "<h2>短信登录</h2>\n<h3>基于Session实现登录的流程</h3>\n<p>![](<a href=\"https://zzyang.oss-cn-hangzhou.aliyuncs.com/img/202\">https://zzyang.oss-cn-hangzhou.aliyuncs.com/img/202</a></p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/redis-actualCombat\" target=\"_blank\">https://zzyang.top/posts/redis-actualCombat</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/redis-actualCombat",
+            "title": "Redis - 实战",
+            "date_modified": "2025-12-18T10:12:23.721Z",
+            "date_published": "2025-12-18T10:12:23.721Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/redis-basic",
+            "content_html": "<h2>初识Redis</h2>\n<p>Redis是一种键值型的NoSQL数据库，这里有两个关键字</p>\n<ul>\n<li>键值型</li>\n<li>NoSQL</li>\n</ul>\n<p>其中键值型是指Redis中存储的数据都是以Key-Value</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/redis-basic\" target=\"_blank\">https://zzyang.top/posts/redis-basic</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/redis-basic",
+            "title": "Redis - 基础",
+            "date_modified": "2025-12-05T02:53:56.406Z",
+            "date_published": "2025-12-05T02:53:56.406Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-otherDbLog",
+            "content_html": "<p>我们在讲解数据库事务时，讲过两种日志：重做日志、回滚日志。</p>\n<p>对于线上数据库应用系统，突然遭遇<code>数据库宕机</code>怎么办？在这种情况下，<code>定位宕机的原因</code>就非常关键。我们可以查看数据库的</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-otherDbLog\" target=\"_blank\">https://zzyang.top/posts/mysql-otherDbLog</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-otherDbLog",
+            "title": "MySQL - 其他数据库日志",
+            "date_modified": "2025-11-11T02:12:28.073Z",
+            "date_published": "2025-11-11T02:12:28.073Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-backup",
+            "content_html": "<p>在任何数据库环境中，总会有<code>不确定的意外</code>情况发生，比如例外的停电、计算机系统中的各种软硬件故障、人为破坏、管理员误操作等是不可避免的，这些情况可能会导致<code>数据的丢失</code>、<code>服务器瘫痪</code>等严重的后果</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-backup\" target=\"_blank\">https://zzyang.top/posts/mysql-backup</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-backup",
+            "title": "MySQL - 数据库备份与恢复",
+            "date_modified": "2025-11-11T02:12:28.071Z",
+            "date_published": "2025-11-11T02:12:28.071Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-masterSlave",
+            "content_html": "<h2>主从复制概述</h2>\n<h3>如何提升数据库并发能力</h3>\n<p>在实际工作中，我们常常将 <code>Redis</code> 作为缓存与 <code>MySQL</code> 配合来使用，当有请求的时候，首先会从缓存中进行查找，如果存</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-masterSlave\" target=\"_blank\">https://zzyang.top/posts/mysql-masterSlave</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-masterSlave",
+            "title": "MySQL - 主从复制",
+            "date_modified": "2025-11-11T02:12:28.071Z",
+            "date_published": "2025-11-11T02:12:28.071Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/java-concurrencyTool",
+            "content_html": "<h2>自定义线程池</h2>\n<h3>阻塞队列</h3>\n<pre><code class=\"language-java\">@Slf4j(topic = &quot;TestPool&quot;)\npublic class TestPool {\n}\n\nclass </code></pre>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/java-concurrencyTool\" target=\"_blank\">https://zzyang.top/posts/java-concurrencyTool</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/java-concurrencyTool",
+            "title": "Java 并发工具",
+            "date_modified": "2025-11-11T02:12:28.070Z",
+            "date_published": "2025-11-11T02:12:28.070Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-IdxCreateDesgRule",
+            "content_html": "<h2>索引的创建与设计原则</h2>\n<h3>索引声明与使用</h3>\n<h4>索引的分类</h4>\n<p>MySQL的索引包括普通索引、唯一性索引、全文索引、单列索引、多列索引和空间索引等。</p>\n<ul>\n<li>从</li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-IdxCreateDesgRule\" target=\"_blank\">https://zzyang.top/posts/mysql-IdxCreateDesgRule</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-IdxCreateDesgRule",
+            "title": "MySQL - 索引的创建与设计原则",
+            "date_modified": "2025-11-11T02:12:28.070Z",
+            "date_published": "2025-11-11T02:12:28.070Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/electron-note",
+            "content_html": "<h2>什么是 Electron</h2>\n<p>Electron 是⼀个 <strong>跨平台</strong> 的 <strong>桌⾯应⽤</strong> 开发框架，开发者可以使⽤：HTML、CSS、JavaScript 等 Web 技术来构建桌⾯应⽤程序</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/electron-note\" target=\"_blank\">https://zzyang.top/posts/electron-note</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/electron-note",
+            "title": "Electron",
+            "date_modified": "2025-10-23T03:37:41.813Z",
+            "date_published": "2025-10-23T03:37:41.813Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/efficiency-dev",
+            "content_html": "<p>个人整理和日常使用的工具、网站和软件清单。希望能帮助你发现新的生产力工具，提升效率！</p>\n<p><strong>终端与服务器、数据库管理工具</strong></p>\n<p>| 工具名称 | 核心功能 | 访问/下载 |<br>\n| :-</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/efficiency-dev\" target=\"_blank\">https://zzyang.top/posts/efficiency-dev</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/efficiency-dev",
+            "title": "效率开发",
+            "date_modified": "2025-10-08T03:06:24.797Z",
+            "date_published": "2025-10-08T03:06:24.797Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-IdxDataStruct",
+            "content_html": "<h2>索引的数据结构</h2>\n<h3>为什么使用索引</h3>\n<p>索引是存储引擎用于快速找到数据记录的一种数据结构，就好比一本教科书的目录部分，通过目录中找到对应文章的页码，便可快速定位到需要的文章。MySQL中</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-IdxDataStruct\" target=\"_blank\">https://zzyang.top/posts/mysql-IdxDataStruct</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-IdxDataStruct",
+            "title": "MySQL - 索引的数据结构",
+            "date_modified": "2025-09-20T06:49:46.379Z",
+            "date_published": "2025-09-20T06:49:46.379Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/java-jmm",
+            "content_html": "<p>上一章讲解的 Monitor 主要关注的是访问共享变量时，保证临界区代码的【原子性】</p>\n<p>这一章我们进一步深入学习共享变量在多线程间的【可见性】问题与多条指令执行时的【有序性】问题</p>\n<p>:</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/java-jmm\" target=\"_blank\">https://zzyang.top/posts/java-jmm</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/java-jmm",
+            "title": "Java 共享模型之 JMM",
+            "date_modified": "2025-09-17T01:33:24.589Z",
+            "date_published": "2025-09-17T01:33:24.589Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/java-monitor",
+            "content_html": "<p><strong>本章内容</strong></p>\n<ul>\n<li>共享资源问题\n<ul>\n<li>多线程并发访问共享资源时可能存在的问题</li>\n</ul>\n</li>\n<li>synchronized\n<ul>\n<li>解决多线程并发访问的问题</li>\n</ul>\n</li>\n<li>线程安全分析</li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/java-monitor\" target=\"_blank\">https://zzyang.top/posts/java-monitor</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/java-monitor",
+            "title": "Java 共享模型之管程（Monitor）",
+            "date_modified": "2025-09-05T01:14:49.564Z",
+            "date_published": "2025-09-05T01:14:49.564Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/java-concurrency",
+            "content_html": "<h2>进程与线程</h2>\n<h3>进程</h3>\n<ul>\n<li>程序由指令和数据组成，但这些指令要运行，数据要读写，就必须将指令加载至 CPU，数据加载至内存。在指令运行过程中还需要用到磁盘 、网络等</li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/java-concurrency\" target=\"_blank\">https://zzyang.top/posts/java-concurrency</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/java-concurrency",
+            "title": "Java 并发编程基础",
+            "date_modified": "2025-08-18T03:07:32.955Z",
+            "date_published": "2025-08-18T03:07:32.955Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-mvcc",
+            "content_html": "<h2>什么是MVCC</h2>\n<p>MVCC （<code>Multiversion Concurrency Control</code>），多版本并发控制。顾名思义，MVCC 是通过数据行的多个版本管理来实现数据库的 `并发控制</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-mvcc\" target=\"_blank\">https://zzyang.top/posts/mysql-mvcc</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-mvcc",
+            "title": "MySQL - 多版本并发控制",
+            "date_modified": "2025-08-07T01:52:07.853Z",
+            "date_published": "2025-08-07T01:52:07.853Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-lock",
+            "content_html": "<h1>MySQL - 锁</h1>\n<h2>概述</h2>\n<p>事务的<code>隔离性</code>由这章讲述的<code>锁</code>来实现。</p>\n<p><code>锁</code>是计算机协调多个进程或线程<code>并发访问某一共享资源</code>的机制。在程序开发中会存在多线程同步的问题，当多个线程并</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-lock\" target=\"_blank\">https://zzyang.top/posts/mysql-lock</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-lock",
+            "title": "MySQL - 锁",
+            "date_modified": "2025-08-05T03:53:55.952Z",
+            "date_published": "2025-08-05T03:53:55.952Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-Transaction",
+            "content_html": "<h2>事务</h2>\n<h3>简介</h3>\n<p><strong>事务</strong> 是一组操作的集合，它是一个不可分割的工作单位，事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作<strong>要么同时成功，要么同时失败</strong></p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-Transaction\" target=\"_blank\">https://zzyang.top/posts/mysql-Transaction</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-Transaction",
+            "title": "MySQL - 事务",
+            "date_modified": "2025-07-10T00:00:00.000Z",
+            "date_published": "2025-07-10T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/docker-s",
+            "content_html": "<h1>Docker</h1>\n<h2>安装docker</h2>\n<ol>\n<li>卸载旧版</li>\n</ol>\n<pre><code class=\"language-shell\">yum remove docker \\\n    docker-client \\\n    docker-client-</code></pre>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/docker-s\" target=\"_blank\">https://zzyang.top/posts/docker-s</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/docker-s",
+            "title": "Docker",
+            "date_modified": "2025-07-01T00:00:00.000Z",
+            "date_published": "2025-07-01T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/elastic-search",
+            "content_html": "<h1>Elasticsearch</h1>\n<p>MySql存在的问题：</p>\n<p><strong>查询效率较低</strong></p>\n<p>由于数据库模糊查询不走索引，在数据量较大的时候，查询性能很差。</p>\n<p>数据库模糊查询随着表数据量的增多，查询性能</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/elastic-search\" target=\"_blank\">https://zzyang.top/posts/elastic-search</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/elastic-search",
+            "title": "Elasticsearch",
+            "date_modified": "2025-07-01T00:00:00.000Z",
+            "date_published": "2025-07-01T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/vue3-project",
+            "content_html": "<h1>Vue3工程化</h1>\n<h2>项目初始化</h2>\n<pre><code class=\"language-shell{1,52,23,25}\">D:\\workspace\\vscode\\vue_admin_template&gt;pnpm create vite\n</code></pre>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/vue3-project\" target=\"_blank\">https://zzyang.top/posts/vue3-project</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/vue3-project",
+            "title": "Vue3工程化",
+            "date_modified": "2025-07-01T00:00:00.000Z",
+            "date_published": "2025-07-01T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/vue3-s",
+            "content_html": "<h1>Vue3 快速上手</h1>\n<h2>Vue3 简介</h2>\n<ul>\n<li>2020 年 9 月 18 日，<code>Vue.js</code>发布版<code>3.0</code>版本，代号：<code>One Piece</code>（n</li>\n<li>经历了：[4800+次提交](htt</li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/vue3-s\" target=\"_blank\">https://zzyang.top/posts/vue3-s</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/vue3-s",
+            "title": "Vue3",
+            "date_modified": "2025-07-01T00:00:00.000Z",
+            "date_published": "2025-07-01T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/fragment-a",
+            "content_html": "<h2>数据加解密</h2>\n<h3>RSA 加解密</h3>\n<p>RSA 加密算法是一种非对称加密算法，即 RSA 拥有一对密钥（公钥 和 私钥），公钥可公开。公钥加密的数据，只能由私钥解密；私钥加密的数据只能由公钥</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/fragment-a\" target=\"_blank\">https://zzyang.top/posts/fragment-a</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/fragment-a",
+            "title": "一些杂项",
+            "date_modified": "2025-06-07T00:00:00.000Z",
+            "date_published": "2025-06-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/rabbitmq-a",
+            "content_html": "<h1>RabbitMQ</h1>\n<h2>初识MQ</h2>\n<p><strong>同步调用</strong></p>\n<blockquote>\n<p>同步调用的优势是什么？</p>\n</blockquote>\n<ul>\n<li>时效性强，等待到结果后才返回。</li>\n</ul>\n<hr>\n<blockquote>\n<p>同步调用的问题是什么？</p>\n</blockquote>\n<ul>\n<li>拓展性差</li>\n<li>性能下降</li>\n<li>级</li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/rabbitmq-a\" target=\"_blank\">https://zzyang.top/posts/rabbitmq-a</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/rabbitmq-a",
+            "title": "RabbitMQ",
+            "date_modified": "2025-05-21T00:00:00.000Z",
+            "date_published": "2025-05-21T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/spring-cloud",
+            "content_html": "<h1>SpringCloud</h1>\n<h3><strong>单体架构</strong></h3>\n<p>单体架构:将业务的所有功能集中在一个项目中开发，打成一个包部署</p>\n<p>优点:</p>\n<ul>\n<li>架构简单</li>\n<li>部署成本低</li>\n</ul>\n<p>缺点:</p>\n<ul>\n<li>团队协作成本高</li>\n<li></li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/spring-cloud\" target=\"_blank\">https://zzyang.top/posts/spring-cloud</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/spring-cloud",
+            "title": "Spring Cloud",
+            "date_modified": "2025-05-13T00:00:00.000Z",
+            "date_published": "2025-05-13T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/xiaoxi-socket",
+            "content_html": "<h1>WebSocket 实现简易聊天室</h1>\n<h2>消息推送的常见方式</h2>\n<pre><code>1.轮询 浏览器以指定的时间间隔向服务器发出HTTP请求，服务器实时遮回数据给浏览器\n\n2.长轮询 浏览器发出ajax请求，\n</code></pre>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/xiaoxi-socket\" target=\"_blank\">https://zzyang.top/posts/xiaoxi-socket</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/xiaoxi-socket",
+            "title": "通讯技术",
+            "date_modified": "2025-05-13T00:00:00.000Z",
+            "date_published": "2025-05-13T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/java-threadPool",
+            "content_html": "<h1>线程池</h1>\n<h2>为什么要使用线程池？</h2>\n<p>在没有使用线程池之前，是这样执行任务的</p>\n<p>一个线程只能执行一个任务，不能连续执行任务</p>\n<pre><code class=\"language-java\">public class Task </code></pre>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/java-threadPool\" target=\"_blank\">https://zzyang.top/posts/java-threadPool</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/java-threadPool",
+            "title": "Java SE",
+            "date_modified": "2025-03-07T00:00:00.000Z",
+            "date_published": "2025-03-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/javase-mianshi",
+            "content_html": "<h1>面试指北</h1>\n<h2>Java 基础</h2>\n<h3><strong>==<strong>和</strong>equals</strong>的区别是什么？</h3>\n<ul>\n<li>==既可以比较基本数据类型,也可以比较引用数据类型</li>\n<li>==在比较基本数据类型时, 比较的是值</li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/javase-mianshi\" target=\"_blank\">https://zzyang.top/posts/javase-mianshi</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/javase-mianshi",
+            "title": "Java SE Interview",
+            "date_modified": "2025-03-07T00:00:00.000Z",
+            "date_published": "2025-03-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/middleware-interview",
+            "content_html": "<h2>RabbitMQ</h2>\n<h3>怎么确保消息幂等性？</h3>\n<p><strong>方式1：</strong></p>\n<p>我们在生产者发送消息的时候，将生成的唯一token存储到redis中并且设置一个TTL存活时间，通过`MessagePos</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/middleware-interview\" target=\"_blank\">https://zzyang.top/posts/middleware-interview</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/middleware-interview",
+            "title": "中间件 Interview",
+            "date_modified": "2025-03-07T00:00:00.000Z",
+            "date_published": "2025-03-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/mysql-mianshi",
+            "content_html": "<h1>MySql</h1>\n<h2>char 和 varchar 的区别？</h2>\n<p>在数据库中，CHAR（固定长度字符）和 VARCHAR（可变长度字符）是两种用于存储字符数据的数据类型，它们之间的主要区别在于数据存</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/mysql-mianshi\" target=\"_blank\">https://zzyang.top/posts/mysql-mianshi</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/mysql-mianshi",
+            "title": "MySQL面经",
+            "date_modified": "2025-03-07T00:00:00.000Z",
+            "date_published": "2025-03-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/ops-interview",
+            "content_html": "<h2>Docker</h2>\n<h3></h3>\n<h2>Nginx</h2>\n<h3>nginx是什么？优势？</h3>\n<p>一个高性能的Web服务器和反向代理服务器</p>\n<p>可以容易的做负载均衡，更好的面对高并发的场景。</p>\n<h3>N</h3>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/ops-interview\" target=\"_blank\">https://zzyang.top/posts/ops-interview</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/ops-interview",
+            "title": "运维等 Interview",
+            "date_modified": "2025-03-07T00:00:00.000Z",
+            "date_published": "2025-03-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/redis-notes",
+            "content_html": "<h3>谈谈你对Redis的理解</h3>\n<p>Redis是一个高性能的基于Key-Value结构存储的NoSQL开源数据库。大部分公司<br>\n采用Redis来实现分布式缓存，用来提高数据查询效率。</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/redis-notes\" target=\"_blank\">https://zzyang.top/posts/redis-notes</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/redis-notes",
+            "title": "Redis Interview",
+            "date_modified": "2025-03-07T00:00:00.000Z",
+            "date_published": "2025-03-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/spring-mj",
+            "content_html": "<h2>谈谈你对 Spring 的理解，springmvc，springboot 之间关系？</h2>\n<ol>\n<li><strong>Sping</strong></li>\n</ol>\n<ul>\n<li>Spring 框架的基本概念：</li>\n</ul>\n<p>Spring 是一个开源的 Jav</p>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/spring-mj\" target=\"_blank\">https://zzyang.top/posts/spring-mj</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/spring-mj",
+            "title": "Spring/Spring Boot/SpringMVC",
+            "date_modified": "2025-03-07T00:00:00.000Z",
+            "date_published": "2025-03-07T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://zzyang.top/posts/xxl-job",
+            "content_html": "<h1>XXL-JOB</h1>\n<h2>什么是任务调度？</h2>\n<p>我们可以思考一下下面业务场景的解决方案:</p>\n<ul>\n<li>某电商平台需要每天上午10点，下午3点，晚上8点发放一批优惠券</li>\n<li>某银行系统需要在信用卡到期还款日的</li>\n</ul>\n<br/><p>访问 <a href=\"https://zzyang.top/posts/xxl-job\" target=\"_blank\">https://zzyang.top/posts/xxl-job</a> 阅读全文。</p>",
+            "url": "https://zzyang.top/posts/xxl-job",
+            "title": "XXL-JOB",
+            "date_modified": "2025-02-15T00:00:00.000Z",
+            "date_published": "2025-02-15T00:00:00.000Z",
+            "author": {
+                "name": "张小阳",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}

@@ -8,7 +8,7 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Zxyang's Blog",
+	title: "CodeVoy",
 	subtitle: "努力不一定被看见，休息一定会。",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
 		credit: {
 			enable: true, // Display the credit text of the banner image
 			text: "NEO TOKYO NOIR", // Credit text to be displayed
-			url: "https://www.pixiv.net/artworks/114860198", // (Optional) URL link to the original artwork or artist's page
+			url: "https://www.pixiv.net/artworks/114860150", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
 	toc: {
@@ -32,10 +32,10 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-		  src: '/public/favicon/avatar.png',    // Path of the favicon, relative to the /public directory
-		  theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		  sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-		}
+			src: "/public/favicon/avatar.png", // Path of the favicon, relative to the /public directory
+			theme: "light", // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+			sizes: "32x32", // (Optional) Size of the favicon, set only if you have favicons of different sizes
+		},
 	],
 };
 
@@ -54,25 +54,25 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "/public/favicon/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	name: "张小阳",
+	bio: "努力不一定被看见，休息一定会。",
 	links: [
 		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
+			name: "Email",
+			icon: "flowbite:envelope-outline", // Visit https://icones.js.org/ for icon codes
 			// You will need to install the corresponding icon set if it's not already included
 			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
+			url: "mailto:zxyang3636@163.com",
 		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
+		// {
+		// 	name: "Steam",
+		// 	icon: "fa6-brands:steam",
+		// 	url: "https://store.steampowered.com",
+		// },
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			url: "https://github.com/zxyang3636",
 		},
 	],
 };
