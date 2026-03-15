@@ -13,6 +13,8 @@ import ImageWrapper from "../../components/misc/ImageWrapper.astro";
 import PostMetadata from "../../components/PostMeta.astro";
 import { profileConfig, siteConfig } from "../../config";
 import { formatDateToYYYYMMDD } from "../../utils/date-utils";
+import Twikoo from "@components/comment/Twikoo.astro";
+
 
 export async function getStaticPaths() {
 	const blogEntries = await getSortedPosts();
@@ -109,6 +111,13 @@ const jsonLd = {
             {licenseConfig.enable && <License title={entry.data.title} slug={entry.slug} pubDate={entry.data.published} class="mb-6 rounded-xl license-container onload-animation"></License>}
 
         </div>
+    </div>
+        <div class="card-base p-6 mb-4">
+        <div class="flex items-center mb-4">
+            <div class="w-1 h-5 rounded-md bg-[var(--primary)] mr-3"></div>
+            <h2 class="text-xl font-bold">评论区</h2>
+        </div>
+        <Twikoo path={`/posts/${entry.slug}`} />
     </div>
 
     <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full">

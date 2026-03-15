@@ -14,6 +14,8 @@
 
 感谢你访问我的博客！希望这里的内容对你的技术成长有所帮助。
 
+如果你觉得我的分享对你有价值，欢迎 **Star** 我的项目或者在文章下方留下你的评论和建议。
+
 ## 🚀 关于这个博客
 
 这个博客是我分享技术心得、记录学习历程的地方。在这里你可以找到：
@@ -45,4 +47,5 @@
 :::info
 https://blog.canmoe.com/posts/fuwari-twikoo-guide/
 https://mc.mimeng.top/posts/frontend/fuwari-mermaid-integration-guide/
+https://aulypc1.github.io/posts/website/add_friendspage_in_fuwari/
 :::

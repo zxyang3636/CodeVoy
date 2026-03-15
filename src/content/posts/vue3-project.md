@@ -620,7 +620,7 @@ pnpm install element-plus
 ```
 
 main.ts
-```ts{3-6,9-11}[main.ts]
+```ts title="mainh.ts" {3-6,9-11}
 import { createApp } from 'vue'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
@@ -2050,7 +2050,7 @@ declare module 'nprogress'
 ```
 
 `src/permission.ts`
-```ts{12,18,3,4}
+```ts {12,18,3,4}
 // 路由鉴权
 import router from '@/router'
 import nprogress from 'nprogress'

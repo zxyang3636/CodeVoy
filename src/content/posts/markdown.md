@@ -31,6 +31,17 @@ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
 in chapters 12--14"). Three dots ... will be converted to an ellipsis.
 Unicode is supported. ☺
 
+## 代码块带名称
+
+```ts title="example.ts" {3,5-8}
+// 你的代码
+```
+
+
+```ts title="example.ts" {3,5-8}
+// 你的代码
+```
+
 ## An h2 header
 
 Here's a numbered list:
