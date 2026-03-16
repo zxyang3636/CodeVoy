@@ -1,7 +1,7 @@
 ---
 const config = {
-  el: "#comment",
-  path: Astro.props.path,
+	el: "#comment",
+	path: Astro.props.path,
 };
 ---
 <div id="comment">
@@ -35,7 +35,7 @@ const config = {
       if (window.twikoo) {
         window.twikoo.init({
           ...config,
-          envId: "https://zxyang3636-twikoo.hf.space", // ！！！请替换为您的真实 envId
+          envId: "https://twikoo-zxyang3636.netlify.app/.netlify/functions/twikoo", // ！！！请替换为您的真实 envId
           lang: 'zh-CN',
         });
       }

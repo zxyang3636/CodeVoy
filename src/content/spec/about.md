@@ -48,4 +48,5 @@
 https://blog.canmoe.com/posts/fuwari-twikoo-guide/
 https://mc.mimeng.top/posts/frontend/fuwari-mermaid-integration-guide/
 https://aulypc1.github.io/posts/website/add_friendspage_in_fuwari/
+https://www.luming.cool/posts/2025/11/how-to-compile-twikoo-by-yourself
 :::
