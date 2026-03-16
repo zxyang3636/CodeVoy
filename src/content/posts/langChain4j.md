@@ -4,9 +4,11 @@ published: 2026-03-04
 tags: [Java, 后端, AI]
 category: AI
 draft: false
+image: ../../assets/img/120982147_p0.png
+description: 'Java优雅的操作大模型对话'
 ---
 
-
+[封面图](https://www.pixiv.net/artworks/120982147)
 
 :::warning
 LangChain4j JDK不能低于17
