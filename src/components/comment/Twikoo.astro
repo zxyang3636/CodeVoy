@@ -1,48 +1,194 @@
 ---
-const config = {
-	el: "#comment",
-	path: Astro.props.path,
-};
+const commentPath = Astro.props.path;
 ---
-<div id="comment">
-  <div class="text-center text-gray-500 dark:text-gray-400 p-8">
-    <p>评论区加载中...</p>
-    <p class="text-sm mt-2">如果长时间无法显示，请尝试刷新页面。</p>
-  </div>
+
+<div id="comment" data-no-swup data-path={commentPath}>
+	<div class="text-center text-gray-500 dark:text-gray-400 p-8">
+		<p>评论区加载中...</p>
+		<p class="text-sm mt-2">如果长时间无法显示，请尝试刷新页面。</p>
+	</div>
 </div>
-<script is:inline define:vars={{ config }}>
-  function initTwikoo() {
-    const commentContainer = document.getElementById('comment');
-    if (!commentContainer) return;
 
-    // 清理旧的 Twikoo 实例和脚本
-    if (window.twikoo) {
-      window.twikoo = undefined;
-    }
-    const oldScript = document.getElementById('twikoo-script');
-    if (oldScript) {
-      oldScript.remove();
-    }
+<script is:inline>
+	const TWIKOO_SCRIPT_ID = "twikoo-script";
+	const TWIKOO_SCRIPT_PERSIST_KEY = "twikoo-script";
+	const TWIKOO_STYLE_PERSIST_PREFIX = "twikoo-style-";
+	const TWIKOO_SCRIPT_SRC = "/twikoo/twikoo.min.js";
+	const TWIKOO_ENV_ID =
+		"https://twikoo-zxyang3636.netlify.app/.netlify/functions/twikoo";
+	const TWIKOO_LANG = "zh-CN";
 
-    // 创建并注入新的 Twikoo 脚本
-    const script = document.createElement('script');
-    script.id = 'twikoo-script';
-    script.src = '/twikoo/twikoo.min.js'; // 确保路径正确
-    script.defer = true;
+	function isTwikooStyleTag(styleTag) {
+		const cssText = styleTag?.textContent || "";
+		return cssText.includes(".tk-") || cssText.includes(".twikoo");
+	}
 
-    // 脚本加载后初始化 Twikoo
-    script.onload = () => {
-      if (window.twikoo) {
-        window.twikoo.init({
-          ...config,
-          envId: "https://twikoo-zxyang3636.netlify.app/.netlify/functions/twikoo", // ！！！请替换为您的真实 envId
-          lang: 'zh-CN',
-        });
-      }
-    };
-    document.head.appendChild(script);
-  }
+	function hasTwikooStyles() {
+		return Array.from(document.head.querySelectorAll("style")).some((styleTag) =>
+			isTwikooStyleTag(styleTag),
+		);
+	}
 
-  // 监听 Astro 的页面加载事件来初始化评论
-  document.addEventListener('astro:page-load', initTwikoo);
+	function persistTwikooAssets() {
+		const scriptTag = document.getElementById(TWIKOO_SCRIPT_ID);
+		if (scriptTag) {
+			scriptTag.setAttribute("data-swup-persist", TWIKOO_SCRIPT_PERSIST_KEY);
+		}
+
+		let styleIndex = 0;
+		document.head.querySelectorAll("style").forEach((styleTag) => {
+			if (!isTwikooStyleTag(styleTag)) return;
+
+			if (!styleTag.hasAttribute("data-swup-persist")) {
+				styleTag.setAttribute(
+					"data-swup-persist",
+					`${TWIKOO_STYLE_PERSIST_PREFIX}${styleIndex}`,
+				);
+			}
+			styleIndex += 1;
+		});
+	}
+
+	function loadTwikooScript() {
+		if (window.twikoo && hasTwikooStyles()) {
+			persistTwikooAssets();
+			return Promise.resolve(window.twikoo);
+		}
+
+		if (window.twikoo && !hasTwikooStyles()) {
+			const oldScriptTag = document.getElementById(TWIKOO_SCRIPT_ID);
+			oldScriptTag?.remove();
+			window.__twikooScriptPromise = undefined;
+			window.twikoo = undefined;
+		}
+
+		if (window.__twikooScriptPromise) {
+			return window.__twikooScriptPromise;
+		}
+
+		window.__twikooScriptPromise = new Promise((resolve, reject) => {
+			const existingScript = document.getElementById(TWIKOO_SCRIPT_ID);
+			if (existingScript) {
+				if (window.twikoo) {
+					resolve(window.twikoo);
+					return;
+				}
+				existingScript.addEventListener("load", () => resolve(window.twikoo), {
+					once: true,
+				});
+				existingScript.addEventListener("error", reject, { once: true });
+				return;
+			}
+
+			const script = document.createElement("script");
+			script.id = TWIKOO_SCRIPT_ID;
+			script.src = TWIKOO_SCRIPT_SRC;
+			script.defer = true;
+			script.setAttribute("data-swup-persist", TWIKOO_SCRIPT_PERSIST_KEY);
+			script.onload = () => {
+				persistTwikooAssets();
+				resolve(window.twikoo);
+			};
+			script.onerror = reject;
+			document.head.appendChild(script);
+		});
+
+		return window.__twikooScriptPromise;
+	}
+
+	function markCommentLinksNoSwup() {
+		const commentContainer = document.getElementById("comment");
+		if (!commentContainer) return;
+
+		commentContainer.setAttribute("data-no-swup", "");
+		commentContainer.querySelectorAll("a").forEach((link) => {
+			link.setAttribute("data-no-swup", "");
+		});
+	}
+
+	function observeCommentLinksNoSwup() {
+		const commentContainer = document.getElementById("comment");
+		if (!commentContainer) return;
+
+		if (window.__twikooLinkObserver) {
+			window.__twikooLinkObserver.disconnect();
+		}
+
+		const observer = new MutationObserver(() => {
+			markCommentLinksNoSwup();
+		});
+
+		observer.observe(commentContainer, {
+			childList: true,
+			subtree: true,
+		});
+
+		window.__twikooLinkObserver = observer;
+	}
+
+	function bindCommentAnchorGuard() {
+		if (window.__twikooAnchorGuardBound) return;
+
+		document.addEventListener(
+			"click",
+			(event) => {
+				if (!(event.target instanceof Element)) return;
+
+				const link = event.target.closest("#comment a");
+				if (!link) return;
+
+				const href = (link.getAttribute("href") || "").trim().toLowerCase();
+				if (
+					href === "" ||
+					href === "#" ||
+					href === "javascript:;" ||
+					href === "javascript:void(0)"
+				) {
+					event.preventDefault();
+				}
+			},
+			true,
+		);
+
+		window.__twikooAnchorGuardBound = true;
+	}
+
+	function initTwikoo() {
+		const commentContainer = document.getElementById("comment");
+		if (!commentContainer) return;
+
+		const currentPath =
+			commentContainer.getAttribute("data-path") || window.location.pathname;
+
+		bindCommentAnchorGuard();
+
+		loadTwikooScript()
+			.then(() => {
+				commentContainer.innerHTML = "";
+				window.twikoo?.init?.({
+					el: "#comment",
+					path: currentPath,
+					envId: TWIKOO_ENV_ID,
+					lang: TWIKOO_LANG,
+				});
+
+				persistTwikooAssets();
+				markCommentLinksNoSwup();
+				observeCommentLinksNoSwup();
+			})
+			.catch((error) => {
+				console.error("Twikoo 初始化失败：", error);
+			});
+	}
+
+	window.__twikooInitForPage = initTwikoo;
+
+	if (!window.__twikooPageLoadListenerBound) {
+		document.addEventListener("astro:page-load", () => {
+			window.__twikooInitForPage?.();
+		});
+		window.__twikooPageLoadListenerBound = true;
+	}
+
+	initTwikoo();
 </script>
