@@ -806,7 +806,7 @@ public static void test1() {
 }
 ```
 每个线程调用 test1() 方法时,局部变量 i 都会在每个线程的栈帧内存中被创建多份，因此不存在共享！
-```java [字节码内容]
+```java title="字节码内容"
 public static void test1();
     descriptor: ()V
     flags: ACC_PUBLIC, ACC_STATIC
@@ -4080,7 +4080,7 @@ public class TestLiveLock {
 
 例如 哲学家就餐时
 
-```{15}java
+```java {15}
 @Slf4j
 public class TestDeadLock {
     public static void main(String[] args) {

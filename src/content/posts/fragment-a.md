@@ -1144,7 +1144,7 @@ keytool -genkeypair \
 
 在`application.yml`进行配置
 
-```yml [application.yml]
+```yml title="application.yml"
 spring-admin:
   jwt:
     location: classpath:zzy.jks
@@ -1156,7 +1156,7 @@ spring-admin:
 
 在 config 中配置类
 
-```java [JwtProperties.java]
+```java title="JwtProperties.java"
 @Data
 @Component
 @ConfigurationProperties(prefix = "spring-admin.jwt")
@@ -2081,7 +2081,7 @@ public class UserOrderQueryRequest {
 ```
 
 **Mapper层实现**
-```java{11-13,49-51}
+```java {11-13,49-51}
 @Mapper
 public interface UserOrderMapper {
 

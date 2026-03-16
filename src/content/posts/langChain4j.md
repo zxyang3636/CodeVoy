@@ -779,7 +779,7 @@ public class ChatController {
 
 搞一个简单的demo页面，放到resources/static目录下，访问`http://localhost:8080/index.html`
 
-```[index.html]html
+```html title="index.html"
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>

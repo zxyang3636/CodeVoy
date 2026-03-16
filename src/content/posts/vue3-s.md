@@ -960,7 +960,7 @@ const stopWatch = watchEffect(() => {
 
 这样写有问题，引用组件情况下，与其他页面的 id 重复了
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person">
     <h3 id="title">亚洲</h3>
@@ -979,7 +979,7 @@ const showLog = () => {
 </script>
 ```
 
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <h2 id="title">你好</h2>
   <Person />
@@ -1043,7 +1043,7 @@ const showLog = () => {
 
 子传父
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person">
     <h3 ref="title">亚洲</h3>
@@ -1080,7 +1080,7 @@ defineExpose({ num1, num2, num3 });
 </style>
 ```
 
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <h2 id="title">你好</h2>
   <Person ref="child" />
@@ -1117,7 +1117,7 @@ const showLog = () => {
 
 ## ts 接口、泛型、自定义类型
 
-```ts [index.ts]
+```ts title="index.ts"
 // 定义一个接口，用于限制person对象的具体属性
 
 // 暴露方式： 1.默认暴露 2.分别暴露 3.统一暴露
@@ -1131,7 +1131,7 @@ export interface PersonInter {
 export type Persons = Array<PersonInter>;
 ```
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person"></div>
 </template>
@@ -1166,7 +1166,7 @@ let personList: Persons = [
 
 可理解为 父传给子一个`a`，值是`你好`
 
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <Person a="你好" b="哈哈" />
 </template>
@@ -1181,7 +1181,7 @@ defineOptions({
 <style scoped></style>
 ```
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person">
     <h2>{{ a }}</h2>
@@ -1215,7 +1215,7 @@ console.log(x.a);
 
 **完整示例**
 
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <Person :list="personList" />
 </template>
@@ -1238,7 +1238,7 @@ let personList = reactive<Persons>([
 <style scoped></style>
 ```
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person">
     <ul>
@@ -1333,7 +1333,7 @@ vue3 生命周期
 <br>
 <span class="marker-evy">demo如下</span>
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person">
     <h3>当前sum：{{ sum }}</h3>
@@ -1391,7 +1391,7 @@ onUnmounted(() => {
 <style scoped></style>
 ```
 
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <Person v-if="isShow" />
 </template>
@@ -1418,7 +1418,7 @@ let isShow = ref(true);
 
 如下代码，功能齐全但是，数据与方法比较混乱，可以使用 hook 进行改造
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person">
     <h3>当前sum：{{ sum }}</h3>
@@ -1478,7 +1478,7 @@ img {
 
 改进过后
 
-```vue [Person.vue]
+```vue title="Person.vue"
 <template>
   <div class="person">
     <h3>当前sum：{{ sum }}</h3>
@@ -1514,7 +1514,7 @@ img {
 </style>
 ```
 
-```ts [useDog.ts]
+```ts title="useDog.ts"
 import { reactive, onMounted } from "vue";
 import axios from "axios";
 export default () => {
@@ -1542,7 +1542,7 @@ export default () => {
 };
 ```
 
-```ts [useSum.ts]
+```ts title="useSum.ts"
 import { ref } from "vue";
 export default () => {
   let sum = ref(0);
@@ -1570,7 +1570,7 @@ npm i vue-router
 
 在`src`下创建`router`文件夹，创建`index.ts`文件
 
-```ts [index.ts]
+```ts title="index.ts"
 // 创建路由器，暴露出去
 
 // 1.引入crateRouter
@@ -1601,7 +1601,7 @@ const router = createRouter({
 export default router;
 ```
 
-```ts [main.ts]
+```ts title="main.ts"
 import "./assets/main.css";
 
 import { createApp } from "vue";
@@ -1617,7 +1617,7 @@ app.use(router);
 app.mount("#app");
 ```
 
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <div>
     <h1>路由 示例</h1>
@@ -1768,7 +1768,7 @@ export default router;
 
 编写子组件
 
-```vue [Detail.vue]
+```vue title="Detail.vue"
 <template>
   <h3>编号：xxx</h3>
   <h3>标题：xxx</h3>
@@ -1782,7 +1782,7 @@ export default router;
 
 配置路由规则，使用`children`配置项
 
-```ts [index.ts]
+```ts title="index.ts"
 // 创建路由器，暴露出去
 
 // 1.引入crateRouter
@@ -1822,7 +1822,7 @@ export default router;
 
 跳转路由（记得要加完整路径）
 
-```vue [News.vue]
+```vue title="News.vue"
 <template>
   <div class="newsList">
     <RouterLink :to="{ path: '/news/detail' }" v-for="news in newsList">{{
@@ -1886,7 +1886,7 @@ const newsList = reactive([
 
 **第一种方式**
 
-```vue [News.vue]
+```vue title="News.vue"
 <template>
   <div class="newsList">
     <RouterLink
@@ -1946,7 +1946,7 @@ const newsList = reactive([
 </style>
 ```
 
-```vue [Detail.vue]
+```vue title="Detail.vue"
 <template>
   <h3>编号：{{ query.id }}</h3>
   <h3>标题：{{ query.title }}</h3>
@@ -1970,7 +1970,7 @@ console.log("route", route);
 
 **第二种方式**
 
-```vue [News.vue]
+```vue title="News.vue"
 <template>
   <div class="newsList">
     <RouterLink
@@ -2037,7 +2037,7 @@ const newsList = reactive([
 </style>
 ```
 
-```vue [Detail.vue]
+```vue title="Detail.vue"
 <template>
   <h3>编号：{{ query.id }}</h3>
   <h3>标题：{{ query.title }}</h3>
@@ -2065,7 +2065,7 @@ console.log("route", route);
 
 **第一种方式**
 
-```vue [News.vue]
+```vue title="News.vue"
 <template>
   <div class="newsList">
     <RouterLink
@@ -2127,7 +2127,7 @@ const newsList = reactive([
 
 ![](../../assets/img/Snipaste_2025-03-25_22-22-53.png)
 
-```ts [index.ts]
+```ts title="index.ts"
 // 创建路由器，暴露出去
 
 // 1.引入crateRouter
@@ -2165,7 +2165,7 @@ const router = createRouter({
 export default router;
 ```
 
-```vue [Detail.vue]
+```vue title="Detail.vue"
 <template>
   <h3>编号：{{ params.id }}</h3>
   <h3>标题：{{ params.title }}</h3>
@@ -2189,7 +2189,7 @@ console.log("route", route);
 
 **第二种方式**
 
-```vue [News.vue]
+```vue title="News.vue"
 <template>
   <div class="newsList">
     <RouterLink
@@ -2269,7 +2269,7 @@ const newsList = reactive([
 
 第一种写法:将路由收到的所有 params 参数作为 props 传给路由组件
 
-```ts [index.ts]
+```ts title="index.ts"
 // 创建路由器，暴露出去
 
 // 1.引入crateRouter
@@ -2308,7 +2308,7 @@ const router = createRouter({
 export default router;
 ```
 
-```vue [Detail.vue]
+```vue title="Detail.vue"
 <template>
   <h3>编号：{{ id }}</h3>
   <h3>标题：{{ title }}</h3>
@@ -2330,7 +2330,7 @@ defineProps(["id", "title", "content"]);
 
 **第二种写法**:函数写法，可以自己决定将什么作为 props 给路由组件
 
-```ts [index.ts]
+```ts title="index.ts"
 // 创建路由器，暴露出去
 
 // 1.引入crateRouter
@@ -2372,7 +2372,7 @@ const router = createRouter({
 export default router;
 ```
 
-```vue [News.vue]
+```vue title="News.vue"
 <template>
   <div class="newsList">
     <RouterLink
@@ -2439,7 +2439,7 @@ const newsList = reactive([
 </style>
 ```
 
-```vue [Detail.vue]
+```vue title="Detail.vue"
 <template>
   <h3>编号：{{ id }}</h3>
   <h3>标题：{{ title }}</h3>
@@ -2527,7 +2527,7 @@ onMounted(() => {
 
 实现点击按钮也可查看新闻详情⬇️
 
-```vue [News.vue]
+```vue title="News.vue"
 <template>
   <div class="newsList" v-for="news in newsList">
     <button @click="showDetail(news)">查看</button>
@@ -2614,7 +2614,7 @@ const showDetail = (news: NewsInter) => {
 
 ```
 
-```ts [index.ts]
+```ts title="index.ts"
 // 创建路由器，暴露出去
 
 // 1.引入crateRouter
@@ -2662,7 +2662,7 @@ const router = createRouter({
 export default router;
 ```
 
-```vue [Detail.vue]
+```vue title="Detail.vue"
 <template>
   <h3>编号：{{ id }}</h3>
   <h3>标题：{{ title }}</h3>
@@ -2706,7 +2706,7 @@ routes: [
 npm i nanoid
 ```
 
-```vue [Count.vue]
+```vue title="Count.vue"
 <template>
   <div class="outer">
     <div>当前求和：{{ sum }}</div>
@@ -2751,7 +2751,7 @@ const subtraction = () => {
 
 ```
 
-```vue [LoveTalk.vue]
+```vue title="LoveTalk.vue"
 <template>
     <div class="talk">
         <button @click="getTalk">获取一句话</button>
@@ -2780,7 +2780,7 @@ const getTalk = async () => {
 
 ```
 
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <Count></Count>
   <LoveTalk></LoveTalk>
@@ -2811,7 +2811,7 @@ npm i pinia
 
 在`main.ts`
 
-```ts [main.ts]
+```ts title="main.ts"
 import { createPinia } from 'pinia'
 
 const pinia = createPinia();
@@ -2831,7 +2831,7 @@ app.use(pinia)
 store中定义的数据不用`.value`，因为它是包在`reactive`中的
 ![](../../assets/img/1906696710827016192.png)
 
-```ts [count.ts]
+```ts title="count.ts"
 import { defineStore } from "pinia";
 
 export const useCountStore = defineStore('count', {
@@ -2843,7 +2843,7 @@ export const useCountStore = defineStore('count', {
 });
 ```
 
-```ts [loveTalk.ts]
+```ts title="loveTalk.ts"
 import { defineStore } from "pinia";
 
 export const useLoveTalkStore = defineStore('loveTalk', {
@@ -2855,7 +2855,7 @@ export const useLoveTalkStore = defineStore('loveTalk', {
 });
 ```
 
-```vue [Count.vue]
+```vue title="Count.vue"
 <template>
   <div class="outer">
     <div>当前求和：{{ countStore.sum }}</div>
@@ -2902,7 +2902,7 @@ const subtraction = () => {
 
 ```
 
-```vue [LoveTalk.vue]
+```vue title="LoveTalk.vue"
 <template>
     <div class="talk">
         <button @click="getTalk">获取一句话</button>
@@ -2967,7 +2967,7 @@ const add = () => {
 };
 ```
 
-```ts [Count.ts]
+```ts title="Count.ts"
 import { defineStore } from "pinia";
 
 export const useCountStore = defineStore('count', {
@@ -3041,7 +3041,7 @@ const subtraction = () => {
 
 ```
 
-```ts [count.ts]
+```ts title="count.ts"
 import { defineStore } from "pinia";
 
 export const useCountStore = defineStore('count', {
@@ -3062,7 +3062,7 @@ export const useCountStore = defineStore('count', {
 });
 ```
 
-```vue [LoveTalk.vue]
+```vue title="LoveTalk.vue"
 <template>
     <div class="talk">
         <button @click="getTalk">获取一句话</button>
@@ -3089,7 +3089,7 @@ function getTalk() {
 
 ```
 
-```ts [loveTalk.ts]
+```ts title="loveTalk.ts"
 import axios from "axios";
 import { nanoid } from "nanoid";
 import { defineStore } from "pinia";
@@ -3116,7 +3116,7 @@ export const useLoveTalkStore = defineStore('loveTalk', {
 
 概念：当`state`中的数据，需要经过处理后再使用时，可以使用`getters`配置。
 
-```ts [count.ts]
+```ts title="count.ts"
 import { defineStore } from "pinia";
 
 export const useCountStore = defineStore('count', {
@@ -3145,7 +3145,7 @@ export const useCountStore = defineStore('count', {
 });
 ```
 
-```vue [Count.vue]
+```vue title="Count.vue"
 <template>
   <div class="outer">
     <div>当前求和：{{ sum }},放大十倍后：{{ zoomInTenTimes }}</div>
@@ -3204,7 +3204,7 @@ const subtraction = () => {
 
 通过 store 的 `$subscribe()` 方法侦听 `state` 及其变化
 
-```vue [LoveTalk.vue]
+```vue title="LoveTalk.vue"
 <template>
     <div class="talk">
         <button @click="getTalk">获取一句话</button>
@@ -3236,7 +3236,7 @@ function getTalk() {
 
 ```
 
-```ts [loveTalk.ts]
+```ts title="loveTalk.ts"
 import axios from "axios";
 import { nanoid } from "nanoid";
 import { defineStore } from "pinia";
@@ -3261,7 +3261,7 @@ export const useLoveTalkStore = defineStore('loveTalk', {
 
 ### store组合式写法
 
-```ts [loveTalk.ts]
+```ts title="loveTalk.ts"
 import axios from "axios";
 import { nanoid } from "nanoid";
 import { defineStore } from "pinia";
@@ -3308,7 +3308,7 @@ export const useLoveTalkStore = defineStore('loveTalk', () => {
 - 若 **父传子**：属性值是**非函数**。
 - 若 **子传父**：属性值是**函数**。
 
-```vue [Father.vue]
+```vue title="Father.vue"
 <template>
   <div class="father">
     <h3>父组件</h3>
@@ -3341,7 +3341,7 @@ export const useLoveTalkStore = defineStore('loveTalk', () => {
 </style>
 ```
 
-```vue [Child.vue]
+```vue title="Child.vue"
 <template>
   <div class="child">
     <h3>子组件</h3>
@@ -3534,7 +3534,7 @@ npm i mitt
 ```
 
 简单demo,在utils下创建
-```ts [emitter.ts]
+```ts title="emitter.ts"
 // 引入mitt
 import mitt from 'mitt'
 
@@ -3566,7 +3566,7 @@ setInterval(() => {
 export default emitter
 ```
 
-```vue [Father.vue]
+```vue title="Father.vue"
 <template>
   <div class="father">
     <h3>父组件</h3>
@@ -3592,7 +3592,7 @@ export default emitter
 </style>
 ```
 
-```vue [Child1.vue]
+```vue title="Child1.vue"
 <template>
 	<div class="child1">
 		<h3>子组件1</h3>
@@ -3624,7 +3624,7 @@ let toy = ref('奥特曼')
 </style>
 ```
 
-```vue [Child2.vue]
+```vue title="Child2.vue"
 <template>
 	<div class="child2">
 		<h3>子组件2</h3>
@@ -3708,7 +3708,7 @@ const updateA = (value: number) => {
 
 ```
 
-```vue{4}[Child.vue]
+```vue title="Child.vue" {4}
 <template>
 	<div class="child">
 		<h3>子组件</h3>
@@ -3731,7 +3731,7 @@ const updateA = (value: number) => {
 </style>
 ```
 
-```vue{13,7}[GrandChild.vue]
+```vue title="GrandChild.vue" {13,7}
 <template>
 	<div class="grand-child">
 		<h3>孙组件</h3>
@@ -3774,7 +3774,7 @@ defineProps(['a', 'b', 'c', 'updateA'])
    | `$refs`   | 值为对象，包含所有被`ref`属性标识的`DOM`元素或组件实例。 |
    | `$parent` | 值为对象，当前组件的父组件实例对象。                     |
 
-```vue [Father.vue]
+```vue title="Father.vue"
 <template>
 	<div class="father">
 		<h3>父组件</h3>
@@ -3816,7 +3816,7 @@ defineExpose({ house })
 
 ```
 
-```vue [Child1.vue]
+```vue title="Child1.vue"
 <template>
 	<div class="child1">
 		<h3>子组件1</h3>
@@ -3851,7 +3851,7 @@ defineExpose({ book, toy })
 
 ```
 
-```vue [Child2.vue]
+```vue title="Child2.vue"
 <template>
 	<div class="child2">
 		<h3>子组件2</h3>
@@ -3897,7 +3897,7 @@ defineExpose({ book, computer })
 
 
 
-```vue [Father.vue]
+```vue title="Father.vue"
 <template>
   <div class="father">
     <h3>父组件</h3>
@@ -3937,7 +3937,7 @@ provide('car', car)
 </style>
 ```
 
-```vue [GrandChild.vue]
+```vue title="GrandChild.vue"
 <template>
   <div class="grand-child">
     <h3>我是孙组件</h3>
@@ -3966,7 +3966,7 @@ let y = inject('car', { brand: 'BMW', price: 0 })
 </style>
 ```
 
-```vue [Child.vue]
+```vue title="Child.vue"
 <template>
   <div class="child">
     <h3>我是子组件</h3>
@@ -4000,7 +4000,7 @@ let y = inject('car', { brand: 'BMW', price: 0 })
 
 ### 1.默认插槽
 
-```vue [Father.vue]
+```vue title="Father.vue"
 <template>
   <div class="father">
     <h3>父组件</h3>
@@ -4060,7 +4060,7 @@ video {
 ```
 
 
-```vue [Game.vue]
+```vue title="Game.vue"
 <template>
   <div class="game">
     <h2>{{ title }}</h2>
@@ -4095,7 +4095,7 @@ h2 {
 
 ### 2.具名插槽
 
-```vue{26,29}[Father.vue]
+```vue title="Father.vue" {26,29}
 <template>
   <div class="father">
     <h3>父组件</h3>
@@ -4178,7 +4178,7 @@ h2 {
 </style>
 ```
 
-```vue [Game.vue]
+```vue title="Game.vue"
 <template>
   <div class="game">
     <slot name="s1">默认内容</slot>
@@ -4212,7 +4212,7 @@ h2 {
 
 场景：数据在子那边，但根据数据生成的结构，却由父亲决定，
 
-```vue [Father.vue]
+```vue title="Father.vue"
 <template>
   <div class="father">
     <h3>父组件</h3>
@@ -4277,7 +4277,7 @@ h2 {
 </style>
 ```
 
-```vue [Game.vue]
+```vue title="Game.vue"
 <template>
   <div class="game">
     <slot name="qwer" :games="gameList" x="Hello">默认内容</slot>

@@ -86,7 +86,7 @@ docker load -i kibana.tar
 ```
 
 通过下面的Docker命令即可安装单机版本的elasticsearch：
-```Bash
+```bash
 docker run -d \
   --name es \
   -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
@@ -565,7 +565,7 @@ POST /_analyze
 
 2）在`IKAnalyzer.cfg.xml`配置文件内容添加：
 
-```xml{6}
+```xml {6}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
@@ -1341,7 +1341,7 @@ PUT /items
 
 
 **创建索引库及mapping映射：**
-```java{25-32}
+```java {25-32}
 public class ElasticSearchTest {
 
     private RestHighLevelClient restHighLevelClient;
@@ -1538,7 +1538,7 @@ public class ItemDoc{
 ```
 
 测试类代码如下：
-```java{25-36}
+```java {25-36}
 @SpringBootTest(properties = "spring.profiles.active=local")
 public class ElasticSearchDocumentTest {
 
@@ -1650,7 +1650,7 @@ DELETE /hotel/_doc/{id}
 
 全量更新和新增是一样的操作API，如果这个id的数据存在则修改，不存在则添加
 
-```java{7}
+```java {7}
     @Test
     void testIndexDoc() throws IOException {
         // 0.准备文档数据
@@ -2490,7 +2490,7 @@ elasticsearch返回的结果是一个JSON字符串，结构包含：
 
 **示例代码：**
 
-```java{26-44}
+```java {26-44}
 @SpringBootTest(properties = "spring.profiles.active=local")
 public class ElasticeSearchTest {
 
@@ -2642,7 +2642,7 @@ void testTerm() throws IOException {
 >
 >价格必须低于300
 
-```java{38-66}
+```java {38-66}
 @SpringBootTest(properties = "spring.profiles.active=local")
 public class ElasticeSearchTest {
 
@@ -3377,5 +3377,4 @@ count = 1498
 brand = 北极绒
 count = 1382
 ```
-
 

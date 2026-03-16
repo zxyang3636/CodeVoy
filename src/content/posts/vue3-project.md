@@ -11,7 +11,7 @@ draft: false
 
 ## 项目初始化
 
-```shell{1,52,23,25}
+```shell {1,52,23,25}
 D:\workspace\vscode\vue_admin_template>pnpm create vite
 .../19788950c58-c70                      |   +1 +
 .../19788950c58-c70                      | Progress: resolved 1, reused 0, downloaded 1, added 1, done
@@ -83,7 +83,7 @@ Port 5173 is in use, trying another one...
 
 
 在package.json中配置如下，启动项目时，可自动打开浏览器
-```json{2}
+```json {2}
   "scripts": {
     "dev": "vite --open",
     "build": "vue-tsc -b && vite build",
@@ -313,7 +313,7 @@ yarn add prettier --dev
 ```
 
 `pacakage.json`
-```json{7}[package.json]
+```json title="package.json" {7}
   "scripts": {
     "dev": "vite --open",
     "build": "vue-tsc -b && vite build",
@@ -620,7 +620,7 @@ pnpm install element-plus
 ```
 
 main.ts
-```ts title="mainh.ts" {3-6,9-11}
+```ts title="main.ts" {3-6,9-11}
 import { createApp } from 'vue'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
@@ -638,7 +638,7 @@ app.mount('#app')
 
 ### element 图标注册为全局组件
 `src/components/index.ts`
-```ts{4,11-13}[index.ts]
+```ts title="index.ts" {4,11-13}
 import SvgIcon from './SvgIcon/index.vue'
 import type { App, Component } from 'vue'
 const components: { [name: string]: Component } = { SvgIcon }
@@ -662,7 +662,7 @@ export default {
 在开发项目的时候文件与文件关系可能很复杂，因此我们需要给src文件夹配置一个别名
 
 编辑`vite.config.ts`
-```ts{3,6-10}[vite.config.ts]
+```ts title="vite.config.ts" {3,6-10}
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
@@ -679,7 +679,7 @@ export default defineConfig({
 **TypeScript 编译配置**
 
 `tsconfig.json`
-```json{3-6}
+```json {3-6}
 {
   "compilerOptions": {
     "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录
@@ -691,7 +691,7 @@ export default defineConfig({
 ```
 
 `tsconfig.app.json`
-```json{5-9}
+```json {5-9}
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
@@ -810,12 +810,12 @@ export default () => {
 ```
 
 **入口文件导入**
-```ts [main.ts]
+```ts title="main.ts"
 import 'virtual:svg-icons-register'
 ```
 
 `vite-env.d.ts`
-```ts [vite-env.d.ts]
+```ts title="vite-env.d.ts"
 /// <reference types="vite-plugin-svg-icons/client" />
 
 declare module 'virtual:svg-icons-register' {
@@ -915,7 +915,7 @@ import SvgIcon from '@/components/SvgIcon/index.vue'
 
 在src文件夹`components`目录下创建一个`index.ts`文件，用于注册`components`文件夹内部全部全局组件
 
-```ts [index.ts]
+```ts title="index.ts"
 import SvgIcon from './SvgIcon/index.vue';
 import type { App, Component } from 'vue';
 const components: { [name: string]: Component } = { SvgIcon };
@@ -929,7 +929,7 @@ export default {
 ```
 
 在入口文件main.ts引入src/index.ts文件,通过app.use方法安装自定义插件
-```ts [main.ts]
+```ts title="main.ts"
 import globalComponent from '@/components'
 app.use(globalComponent)
 ```
@@ -947,7 +947,7 @@ app.use(globalComponent)
 
 **引入全局样式**
 在main.ts中
-```ts [main.ts]
+```ts title="main.ts"
 import '@/styles/index.scss'
 ```
 
@@ -1156,7 +1156,7 @@ pre {
 
 
 在`vite.config.ts`文件配置如下:
-```ts [vite.config.ts]
+```ts title="vite.config.ts"
 export default defineConfig((config) => {
   css:{
     preprocessorOptions:{
@@ -1171,7 +1171,7 @@ export default defineConfig((config) => {
 
 **使用方式**
 
-```scss [variable.scss]
+```scss title="variable.scss"
 $bgColor: #f0f2f5;
 ```
 
@@ -1191,7 +1191,7 @@ pnpm install -D vite-plugin-mock mockjs
 ```
 
 配置`vite.config.ts`
-```ts [vite.config.ts]
+```ts title="vite.config.ts"
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
@@ -1234,7 +1234,7 @@ export default defineConfig((command) => {
 根目录创建`mock`文件夹
 
 建一个`user.ts`
-```ts [user.ts]
+```ts title="user.ts"
 //用户信息数据
 function createUserList() {
   return [
@@ -1304,7 +1304,7 @@ export default [
 ```
 
 main.ts中测试下
-```ts [main.ts]
+```ts title="main.ts"
 import axios from 'axios'
 
 axios({
@@ -1335,7 +1335,7 @@ pnpm install axios
 
 在根目录下创建`utils/request.ts`
 
-```ts [request.ts]
+```ts title="request.ts"
 // axios二次封装
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
@@ -1389,7 +1389,7 @@ export default request
 
 ```
 
-``` [.env.development]
+```txt title=".env.development"
 # 变量必须以 VITE_ 为前缀才能暴露给外部读取
 NODE_ENV = 'development'
 VITE_APP_TITLE = 'ZZY后台'
@@ -1398,7 +1398,7 @@ VITE_SERVE='http://127.0.0.1:8080'
 ```
 
 简单测试下
-```vue [App.vue]
+```vue title="App.vue"
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import request from './utils/request';
@@ -1429,7 +1429,7 @@ onMounted(() => {
 
 user下创建`index.ts`及`type.ts`
 
-```ts [index.ts]
+```ts title="index.ts"
 // 同意管理用户相关接口
 
 import request from '@/utils/request'
@@ -1451,7 +1451,7 @@ export const reqUserInfo = () =>
 
 ```
 
-```ts [type.ts]
+```ts title="type.ts"
 // 登录接口的参数ts类型
 export interface loginForm {
   username: string
@@ -1491,7 +1491,7 @@ export interface userResponseData {
 ```
 
 测试使用
-```vue [App.vue]
+```vue title="App.vue"
 <template>
   <div></div>
 </template>
@@ -1523,13 +1523,13 @@ pnpm install vue-router
 
 
 `main.ts`
-```ts [main.ts]
+```ts title="main.ts"
 import router from '@/router'
 
 app.use(router)
 ```
 
-```ts [routes.ts]
+```ts title="routes.ts"
 // 对外暴露配置路由（常量路由）
 export const constantRoute = [
   {
@@ -1557,7 +1557,7 @@ export const constantRoute = [
 
 ```
 
-```ts [index.ts]
+```ts title="index.ts"
 // 通过vue-router实现模版路由配置
 import { createRouter, createWebHistory } from 'vue-router'
 import { constantRoute } from './routes'
@@ -1601,7 +1601,7 @@ pnpm i pinia
 ```
 
 创建`src/store/index.ts`
-```ts [index.ts]
+```ts title="index.ts"
 import { createPinia } from 'pinia'
 
 let pinia = createPinia()
@@ -1611,7 +1611,7 @@ export default pinia
 ```
 
 `main.ts`
-```ts [main.ts]
+```ts title="main.ts"
 import pinia from './store'
 
 app.use(pinia)
@@ -1619,7 +1619,7 @@ app.use(pinia)
 
 创建`src/store/modules/user.ts`
 
-```ts [user.ts]
+```ts title="user.ts"
 import { defineStore } from 'pinia'
 import { reqLogin } from '@/api/user'
 import type { loginForm } from '@/api/user/type'
@@ -1660,7 +1660,7 @@ pnpm i pinia-plugin-persistedstate
 ```
 
 `src/store/index.ts`
-```ts [index.ts]
+```ts title="index.ts"
 import { createPinia } from "pinia" //引入pinia
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate' //引入持久化插件
 
@@ -1673,7 +1673,7 @@ export default pinia //导出pinia用于main.js注册
 
 将 persist 选项设置为 true，整个 Store 将使用默认持久化配置保存。
 
-```ts{16}[user.ts]
+```ts title="user.ts" {16}
 import { defineStore } from "pinia"
 
 const useUserInfoStore = defineStore('userInfo', {
@@ -1940,7 +1940,7 @@ export default i18n
 
 创建`src/i18n/lang/en.ts`,`src/i18n/lang/zh.ts`
 
-```ts [zh.ts]
+```ts title="zh.ts"
 // 中文语言包
 
 export default {
@@ -1968,7 +1968,7 @@ export default {
 
 ```
 
-```ts [en.ts]
+```ts title="en.ts"
 // 英文语言包
 
 export default {
@@ -2045,7 +2045,7 @@ pnpm i nprogress
 ```
 
 `vite-env.d.ts`
-```ts [vite-env.d.ts]
+```ts title="vite-env.d.ts"
 declare module 'nprogress'
 ```
 
@@ -2074,7 +2074,7 @@ router.afterEach((to, from) => {
 ```
 
 `main.ts`
-```ts [main.ts]
+```ts title="main.ts"
 import './permission'
 ```
 

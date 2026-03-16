@@ -93,7 +93,7 @@ Java Websocket应用<span class="marker-evy">由一系列的Endpoint组成</span
 
 **引入依赖**
 
-```xml [pom.xml]
+```xml title="pom.xml"
 <!--websocket-->
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -106,7 +106,7 @@ Java Websocket应用<span class="marker-evy">由一系列的Endpoint组成</span
 	编写配置类，扫描添加有@ServerEndpoint注解的Bean
 	该配置类会自动扫描带有@ServerEndpoint注解的
 
-```java [WebSocketConfig]
+```java title="WebSocketConfig"
 @Configuration
 public class WebSocketConfig {
     @Bean
@@ -117,7 +117,7 @@ public class WebSocketConfig {
 ```
 
 	编写配置类，用于获取HttpSession对象
-```java [GetHttpSessionConfig]
+```java title="GetHttpSessionConfig"
 public class GetHttpSessionConfig extends ServerEndpointConfig.Configurator {
 
     @Override
@@ -302,7 +302,7 @@ SSE 与 WebSocket 有相似功能，都是用来建立浏览器与服务器之�
 
 **后端**
 
-```java [MessageNoticeController]
+```java title="MessageNoticeController"
 @RestController
 @RequestMapping("/messageObtain")
 @Slf4j

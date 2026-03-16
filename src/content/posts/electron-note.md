@@ -69,7 +69,7 @@ npm init
 
 修改`package.json`文件
 
-```json{4,8,10}
+```json {4,8,10}
 {
   "name": "electron_test",
   "version": "1.0.0",
@@ -152,7 +152,7 @@ npm start
 
 在 main.js 中添加如下代码
 
-```js{13-22}
+```js {13-22}
 const { app, BrowserWindow } = require("electron");
 
 function createWindow() {
@@ -335,7 +335,7 @@ btn1.onclick = () => {
 
 ```
 
-```js [render.js]
+```js title="render.js"
 const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
 const input = document.getElementById("input");
@@ -815,7 +815,7 @@ main.js中的load地址为vite项目的启动地址
 
 **优雅打开窗口**
 `main.js`中
-```js{16,23,24,25}
+```js {16,23,24,25}
 const { app, BrowserWindow } = require("electron");
 const WinState = require("electron-win-state").default;
 const path = require("path");

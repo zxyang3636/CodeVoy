@@ -160,7 +160,7 @@ xxl.job.logretentiondays=30
 也就是使用我们现有项目，或新建一个demo项目
 
 添加依赖
-```xml [pom.xml]
+```xml title="pom.xml"
 <dependency>
     <groupId>com.xuxueli</groupId>
     <artifactId>xxl-job-core</artifactId>
@@ -172,7 +172,7 @@ xxl.job.logretentiondays=30
 
 ::: code-group
 
-```yaml [application.yaml]
+```yaml title="application.yaml"
 ### 调度中心部署根地址 [选填]：如调度中心集群部署存在多个地址则用逗号分隔。执行器将会使用该地址进行"执行器心跳注册"和"任务结果回调"；为空则关闭自动注册；
 xxl:
   job:
@@ -188,7 +188,7 @@ xxl:
       logretentiondays: 30
 ```
 
-```yaml [application.properties]
+```yaml title="application.properties"
 ### 调度中心部署根地址 [选填]：如调度中心集群部署存在多个地址则用逗号分隔。执行器将会使用该地址进行"执行器心跳注册"和"任务结果回调"；为空则关闭自动注册；
 xxl.job.admin.addresses=http://127.0.0.1:8080/xxl-job-admin
 ### 执行器通讯TOKEN [选填]：非空时启用；
@@ -252,7 +252,7 @@ public class XxlJobConfig {
 ```
 
 添加一个简单的任务处理
-```java [SimpleXxlJob.java]
+```java title="SimpleXxlJob.java"
 @Component
 public class SimpleXxlJob {
     @XxlJob("demoJobHandler")
@@ -432,7 +432,7 @@ spring.datasource.password=密码
 void sendMsgHandler();
 ```
 
-```java [UserMobilePlanServiceImpl.java]
+```java title="UserMobilePlanServiceImpl.java"
     @Override
     @XxlJob("sendMsgHandler")
     public void sendMsgHandler() {
@@ -483,7 +483,7 @@ int shardTotal = XxlJobHelper.getShardTotal();
 之前2000+条数据只在一台机器上执行需要20+秒才能完成任务，分片后，有两台机器可以共同完成2000+条数据，每台机器处理1000+条数据，这样的话只需要10+秒就能完成任务；
 
 改造之前的方法
-```java  [UserMobilePlanServiceImpl.java]
+```java title="UserMobilePlanServiceImpl.java"
 @Override
     @XxlJob("sendMsgHandler")
     public void sendMsgHandler() {
@@ -512,11 +512,11 @@ int shardTotal = XxlJobHelper.getShardTotal();
     }
 ```
 
-```java [UserMobilePlanMapper.java]
+```java title="UserMobilePlanMapper.java"
     List<UserMobilePlan> selectByMod(@Param("shardingIndex") Integer shardingIndex, @Param("shardingTotal") Integer shardingTotal);
 ```
 
-```xml [UserMobilePlanMapper.xml]
+```xml title="UserMobilePlanMapper.xml"
   <select id="selectByMod" resultMap="BaseResultMap">
     select * from t_user_mobile_plan where mod(id,#{shardingTotal})=#{shardingIndex}
   </select>
