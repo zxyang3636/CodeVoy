@@ -1,0 +1,12 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+---
+<MainGridLayout title="键盘侠的日常哔哔" description="说说列表">
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 mb-4">
+        <div class="card-base z-10 px-6 md:px-9 pt-6 pb-8 relative w-full">
+            <div id="talk"></div>
+            <div class="limit">- 只展示最近30条说说 -</div>
+        </div>
+    </div>
+    <script src="/js/ech0-shuoshuo.js" is:inline></script>
+</MainGridLayout>
