@@ -196,7 +196,7 @@
             <div class="external-link-left" style="background-image:url(${extensionBack})"></div>
             <div class="external-link-right">
               <div class="external-link-title">${title}</div>
-              <div>Open<i class="fa-solid fa-angle-right"></i></div>
+              <div class="external-link-action">Open<svg class="external-link-arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.17 5.59a1 1 0 0 1 1.41 0l5 5a1 1 0 0 1 0 1.41l-5 5a1 1 0 1 1-1.41-1.41L16.46 13H5a1 1 0 1 1 0-2h11.46l-3.29-3.29a1 1 0 0 1 0-1.42Z" fill="currentColor"></path></svg></div>
             </div>
           </a>
         </div>`;

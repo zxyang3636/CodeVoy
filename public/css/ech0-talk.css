@@ -8,6 +8,8 @@
     --liushen-text: #4c4948;
     --liushen-button-bg: #f1f3f8;
     --liushen-fancybox-bg: rgba(255,255,255,0.5);
+    --liushen-external-link-hover-bg: #eaf3ff;
+    --liushen-external-link-hover-border: #b6d4f2;
 }
 
 :root.dark, .dark {
@@ -20,6 +22,8 @@
     --liushen-button-hover-bg: #2679cc;
     --liushen-text: rgba(255,255,255,0.702);
     --liushen-fancybox-bg: rgba(0,0,0,0.5);
+    --liushen-external-link-hover-bg: #244a73;
+    --liushen-external-link-hover-border: #2e5f91;
 }
 
 #talk .talk_item {
@@ -219,11 +223,14 @@
     background-color: var(--liushen-card-secondbg);
     color: var(--liushen-text);
     border: var(--liushen-card-border);
-    transition: background-color .3s ease-in-out;
+    transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
 
 .shuoshuo-external-link:hover {
-    background-color: var(--liushen-button-hover-bg);
+    background-color: var(--liushen-external-link-hover-bg);
+    border-color: var(--liushen-external-link-hover-border);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+    transform: translateY(-1px);
 }
 
 .shuoshuo-external-link .external-link {
@@ -234,7 +241,7 @@
 }
 
 .shuoshuo-external-link .external-link:hover {
-    color: white !important;
+    color: var(--liushen-text) !important;
 }
 
 .shuoshuo-external-link .external-link:hover {
@@ -264,6 +271,25 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.shuoshuo-external-link .external-link-right .external-link-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.shuoshuo-external-link .external-link-right .external-link-action .external-link-arrow-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+.shuoshuo-external-link:hover .external-link-right .external-link-action .external-link-arrow-icon {
+    transform: translateX(2px);
 }
 
 .shuoshuo-external-link .external-link-right i {
