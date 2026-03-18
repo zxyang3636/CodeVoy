@@ -130,21 +130,84 @@
 						.filter(Boolean)
 						.map((url) => (url.startsWith("http") ? url : `${origin}${url}`))
 				: [];
+		const layoutType = (item.layout || "waterfall").toLowerCase();
+		const galleryName = `talk-gallery-${item.id || Date.now()}`;
 
 		if (images.length > 0) {
-			const imgDiv = document.createElement("div");
-			imgDiv.className = "zone_imgbox";
-			images.forEach((url) => {
-				const link = document.createElement("a");
-				link.href = `${url}?fmt=webp&q=75`;
-				link.setAttribute("data-fancybox", "gallery");
-				link.className = "fancybox";
-				const imgTag = document.createElement("img");
-				imgTag.src = `${url}?fmt=webp&q=75`;
-				link.appendChild(imgTag);
-				imgDiv.appendChild(link);
-			});
-			content += imgDiv.outerHTML;
+			if (layoutType === "horizontal" && images.length > 1) {
+				const carousel = document.createElement("div");
+				carousel.className = "zone_imgbox-carousel";
+
+				const track = document.createElement("div");
+				track.className = "zone_imgbox-carousel-track";
+
+				images.forEach((url, index) => {
+					const slide = document.createElement("div");
+					slide.className = "zone_imgbox-carousel-slide";
+
+					const link = document.createElement("a");
+					link.href = `${url}?fmt=webp&q=75`;
+					link.setAttribute("data-fancybox", galleryName);
+					link.className = "fancybox";
+
+					const imgTag = document.createElement("img");
+					imgTag.src = `${url}?fmt=webp&q=75`;
+					imgTag.alt = `talk-image-${index + 1}`;
+
+					link.appendChild(imgTag);
+					slide.appendChild(link);
+					track.appendChild(slide);
+				});
+
+				carousel.appendChild(track);
+
+				const controls = document.createElement("div");
+				controls.className = "zone_imgbox-carousel-controls";
+
+				const prevBtn = document.createElement("button");
+				prevBtn.type = "button";
+				prevBtn.className = "zone-carousel-btn zone-carousel-btn-prev";
+				prevBtn.setAttribute("aria-label", "Previous image");
+				prevBtn.textContent = "<";
+
+				const nextBtn = document.createElement("button");
+				nextBtn.type = "button";
+				nextBtn.className = "zone-carousel-btn zone-carousel-btn-next";
+				nextBtn.setAttribute("aria-label", "Next image");
+				nextBtn.textContent = ">";
+
+				controls.appendChild(prevBtn);
+				controls.appendChild(nextBtn);
+				carousel.appendChild(controls);
+
+				const dots = document.createElement("div");
+				dots.className = "zone_imgbox-carousel-dots";
+				images.forEach((_, index) => {
+					const dot = document.createElement("button");
+					dot.type = "button";
+					dot.className = "zone-carousel-dot";
+					dot.setAttribute("data-index", String(index));
+					dot.setAttribute("aria-label", `Go to image ${index + 1}`);
+					dots.appendChild(dot);
+				});
+				carousel.appendChild(dots);
+
+				content += carousel.outerHTML;
+			} else {
+				const imgDiv = document.createElement("div");
+				imgDiv.className = "zone_imgbox";
+				images.forEach((url) => {
+					const link = document.createElement("a");
+					link.href = `${url}?fmt=webp&q=75`;
+					link.setAttribute("data-fancybox", galleryName);
+					link.className = "fancybox";
+					const imgTag = document.createElement("img");
+					imgTag.src = `${url}?fmt=webp&q=75`;
+					link.appendChild(imgTag);
+					imgDiv.appendChild(link);
+				});
+				content += imgDiv.outerHTML;
+			}
 		}
 
 		const extensionType = item.extension?.type || item.extension_type || "";
@@ -331,6 +394,58 @@
 		list.map(normalizeTalk).forEach((item) => {
 			container.appendChild(generateTalkElement(item));
 		});
+		initHorizontalCarousels(container);
+	};
+
+	const initHorizontalCarousels = (container) => {
+		container.querySelectorAll(".zone_imgbox-carousel").forEach((carousel) => {
+			if (carousel.dataset.carouselInit === "1") return;
+
+			const track = carousel.querySelector(".zone_imgbox-carousel-track");
+			const slides = Array.from(
+				carousel.querySelectorAll(".zone_imgbox-carousel-slide"),
+			);
+			const prevBtn = carousel.querySelector(".zone-carousel-btn-prev");
+			const nextBtn = carousel.querySelector(".zone-carousel-btn-next");
+			const dots = Array.from(carousel.querySelectorAll(".zone-carousel-dot"));
+
+			if (!track || slides.length <= 1) {
+				carousel.dataset.carouselInit = "1";
+				return;
+			}
+
+			let current = 0;
+
+			const update = () => {
+				track.style.transform = `translateX(-${current * 100}%)`;
+				dots.forEach((dot, index) => {
+					dot.classList.toggle("is-active", index === current);
+				});
+			};
+
+			prevBtn?.addEventListener("click", (event) => {
+				event.preventDefault();
+				current = (current - 1 + slides.length) % slides.length;
+				update();
+			});
+
+			nextBtn?.addEventListener("click", (event) => {
+				event.preventDefault();
+				current = (current + 1) % slides.length;
+				update();
+			});
+
+			dots.forEach((dot, index) => {
+				dot.addEventListener("click", (event) => {
+					event.preventDefault();
+					current = index;
+					update();
+				});
+			});
+
+			update();
+			carousel.dataset.carouselInit = "1";
+		});
 	};
 
 	const fetchAndRenderTalks = (container) => {
@@ -374,7 +489,42 @@
 		fetchAndRenderTalks(talkContainer);
 	};
 
+	const bindTalkImagePreviewGuard = () => {
+		if (window.__ech0TalkPreviewGuardBound) return;
+
+		document.addEventListener(
+			"click",
+			(event) => {
+				if (!(event.target instanceof Element)) return;
+
+				const link = event.target.closest(
+					"#talk .zone_imgbox a.fancybox, #talk .zone_imgbox-carousel a.fancybox",
+				);
+				if (!link) return;
+
+				event.preventDefault();
+
+				if (!(event.target instanceof HTMLImageElement)) {
+					const img = link.querySelector("img");
+					if (img) {
+						img.dispatchEvent(
+							new MouseEvent("click", {
+								bubbles: true,
+								cancelable: true,
+								view: window,
+							}),
+						);
+					}
+				}
+			},
+			true,
+		);
+
+		window.__ech0TalkPreviewGuardBound = true;
+	};
+
 	const run = () => {
+		bindTalkImagePreviewGuard();
 		renderTalks();
 	};
 

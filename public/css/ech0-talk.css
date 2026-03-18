@@ -143,6 +143,102 @@
     margin: 0 !important;
     object-fit: cover;
 }
+
+#talk .talk_item .talk_content .zone_imgbox-carousel {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--liushen-card-secondbg);
+}
+
+#talk .talk_item .talk_content .zone_imgbox-carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform .35s ease;
+    will-change: transform;
+}
+
+#talk .talk_item .talk_content .zone_imgbox-carousel-slide {
+    min-width: 100%;
+    flex: 0 0 100%;
+    aspect-ratio: 16 / 10;
+}
+
+#talk .talk_item .talk_content .zone_imgbox-carousel-slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#talk .talk_item .talk_content .zone_imgbox-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    margin: 0 !important;
+}
+
+#talk .talk_item .talk_content .zone_imgbox-carousel-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    pointer-events: none;
+}
+
+#talk .talk_item .talk_content .zone-carousel-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+#talk .talk_item .talk_content .zone-carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.62);
+    transform: scale(1.05);
+}
+
+#talk .talk_item .talk_content .zone_imgbox-carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+#talk .talk_item .talk_content .zone-carousel-dot {
+    width: 7px;
+    height: 7px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+#talk .talk_item .talk_content .zone-carousel-dot.is-active {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.18);
+}
 #talk .talk_item .talk_bottom {
     opacity: .9;
 }
