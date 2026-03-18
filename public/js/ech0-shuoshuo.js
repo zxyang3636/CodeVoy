@@ -157,7 +157,8 @@
 		if (["WEBSITE", "GITHUBPROJ"].includes(extensionType)) {
 			let siteUrl = "";
 			let title = "";
-			let extensionBack = "https://p.liiiu.cn/i/2024/07/27/66a4632bbf06e.webp";
+			let extensionBack =
+				"https://img.meituan.net/content/351f403f21f8078a42328282b08c77cf1338.png";
 			try {
 				const extObj =
 					typeof extensionPayload === "string"
@@ -172,7 +173,8 @@
 			}
 
 			if (extensionType === "GITHUBPROJ") {
-				extensionBack = "https://p.liiiu.cn/i/2024/07/27/66a461a3098aa.webp";
+				extensionBack =
+					"https://img.meituan.net/content/cc7948ab56f263bbe66e7562e53d6b0c1524.png";
 				const match = siteUrl.match(
 					/^https?:\/\/github\.com\/[^/]+\/([^/?#]+)/i,
 				);

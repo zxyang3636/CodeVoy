@@ -160,6 +160,7 @@ export default defineConfig({
 	},
 	vite: {
 		build: {
+			emptyOutDir: true,
 			rollupOptions: {
 				onwarn(warning, warn) {
 					// temporarily suppress this warning

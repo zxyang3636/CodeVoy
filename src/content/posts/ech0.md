@@ -1,13 +1,15 @@
 ---
 title: Astro 集成 ech0 实现朋友圈
 published: 2026-03-18
-tags: [ech0,Astro]
-category: Astro
-draft: false
+description: 'Astro + Ech0 实现 朋友圈动态 功能'
+image: 'https://img.meituan.net/content/76ce3481bf9a82056df39e03c54d6ba117154003.png'
+tags: ['Ech0', 'Astro']
+category: 'Astro'
+draft: false 
 ---
 
 
-# Astro 集成 ech0
+
 
 ## Docker部署Ech0
 
@@ -18,7 +20,6 @@ docker pull hub.rat.dev/sn0wl1n/ech0:latest
 # 创建挂载目录
 mkdir -p /home/docker/ech0/data/backup
 mkdir -p /home/docker/ech0/data/ech0-data
-
 ```
 
 ```bash
@@ -57,7 +58,7 @@ docker compose up -d
 
 **修改nginx文件**
 
-```
+```txt
 # 1. 处理 ech0.zzyang.top 的 HTTP 请求，强制跳转 HTTPS
 server {
     listen 80;
@@ -100,6 +101,7 @@ server {
 ## 修改Astro代码
 
 **添加新的样式代码**
+
 ```css title="public/css/ech0-talk.css"
 :root {
     --liushen-card-bg: #fff;
@@ -736,7 +738,7 @@ server {
 		if (["WEBSITE", "GITHUBPROJ"].includes(extensionType)) {
 			let siteUrl = "";
 			let title = "";
-			let extensionBack = "https://p.liiiu.cn/i/2024/07/27/66a4632bbf06e.webp";
+			let extensionBack = "https://img.meituan.net/content/76ce3481bf9a82056df39e03c54d6ba117154003.png";
 			try {
 				const extObj =
 					typeof extensionPayload === "string"
@@ -751,7 +753,7 @@ server {
 			}
 
 			if (extensionType === "GITHUBPROJ") {
-				extensionBack = "https://p.liiiu.cn/i/2024/07/27/66a461a3098aa.webp";
+				extensionBack = "https://img.meituan.net/content/cc7948ab56f263bbe66e7562e53d6b0c1524.png";
 				const match = siteUrl.match(
 					/^https?:\/\/github\.com\/[^/]+\/([^/?#]+)/i,
 				);
